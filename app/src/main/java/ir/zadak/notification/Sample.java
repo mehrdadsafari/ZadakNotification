@@ -24,7 +24,7 @@ import com.squareup.picasso.Target;
 import ir.zadak.zadaknotify.interfaces.ImageLoader;
 import ir.zadak.zadaknotify.interfaces.OnImageLoadingCompleted;
 import ir.zadak.zadaknotify.notification.Load;
-import ir.zadak.zadaknotify.notification.PugNotification;
+import ir.zadak.zadaknotify.notification.ZadakNotification;
 
 
 public class Sample extends AppCompatActivity implements ImageLoader {
@@ -143,7 +143,7 @@ public class Sample extends AppCompatActivity implements ImageLoader {
                 String message = mEdtMessage.getText().toString();
                 String bigtext = mEdtBigText.getText().toString();
                 if (title.length() > 0 && message.length() > 0) {
-                    Load mLoad = PugNotification.with(mContext).load()
+                    Load mLoad = ZadakNotification.with(mContext).load()
                             .notificationChannelId(CHANNEL_ID)
                             .smallIcon(R.drawable.ic_launcher)
                             .autoCancel(true)
@@ -199,7 +199,7 @@ public class Sample extends AppCompatActivity implements ImageLoader {
                     return;
                 }
 
-                PugNotification.with(mContext).load()
+                ZadakNotification.with(mContext).load()
                         .notificationChannelId(CHANNEL_ID)
                         .title(title)
                         .message(message)
