@@ -2,17 +2,6 @@
 ![soon](https://zadak.ir/logo.png)
 
 # Download
-
-Download [the latest AAR][1] or grab via Maven:
-```xml
-<dependency>
-	    <groupId>com.github.mehrdadsafari</groupId>
-	    <artifactId>ZadakNotification</artifactId>
-	    <version>0.0.2</version>
-	</dependency>
-```
-or Gradle:
-
 #Step 1:
 Add it in your root build.gradle at the end of repositories:
 ``` groovy
@@ -32,8 +21,7 @@ Add the dependency:
 
 ![Screenshots](https://raw.githubusercontent.com/halysongoncalves/pugnotification/master/art/screenshot.png)
 
-You're probably tired of writing code to display notifications in your applications, the library abstracts all the notifications construction process for you in a single line of code. Magic? Lie? I summarize in: productivity.
-To further improve productivity, pugnotification from release 1.2.0 now has support Android Wear.
+You're probably tired of writing code to display notifications in your applications, the library abstracts all the notifications construction process for you in a single line of code. this library support Android Wear.
 
 ```java
 PugNotification.with(context)
@@ -59,18 +47,6 @@ PugNotification.with(context)
     .simple()
     .build();
 ```
-
-Many common pitfalls in building cases are handled automatically by PugNotification:
-
-Custom Notifications depend on RemoteViews and Android has RemoteView support for Api's below Jelly Bean.
-Notifications without no messages and title does not make sense there.
-In addition to these treatments, there are other held by Picasso Library Square:
-
-Handling ImageView recycling and download cancelation in an adapter.
-Complex image transformations with minimal memory use.
-Automatic memory and disk caching.
-
-
 # Simple Notification
 
 Simple notification with just text and message.
@@ -141,8 +117,6 @@ PugNotification.with(context)
 
 # Wear Notification
 
-PugNotification from release 1.2.0 started to support all types of notifications to Android Wear. We try to anticipate us to make life easier for developers to develop applications for wearable.
-
 ```java
 PugNotification.with(mContext).load()
     .notificationChannelId(CHANNEL_ID)
@@ -188,6 +162,7 @@ Now just the client implement the ImageLoader interface and implement a way to m
     }
 ```
 ZadakNotification supports placeholders if download the image in the background is not successful. The library already have a default placeholder size 622x384.
+
 # More Information
 Sample App
 
