@@ -3,19 +3,19 @@ package ir.zadak.zadaknotify.notification;
 import android.app.NotificationManager;
 import android.content.Context;
 
-public class PugNotification {
-    private static final String TAG = PugNotification.class.getSimpleName();
-    public static PugNotification mSingleton = null;
+public class ZadakNotification {
+    private static final String TAG = ZadakNotification.class.getSimpleName();
+    public static ZadakNotification mSingleton = null;
     public final Context mContext;
     public boolean shutdown;
 
-    public PugNotification(Context context) {
+    public ZadakNotification(Context context) {
         this.mContext = context;
     }
 
-    public static PugNotification with(Context context) {
+    public static ZadakNotification with(Context context) {
         if (mSingleton == null) {
-            synchronized (PugNotification.class) {
+            synchronized (ZadakNotification.class) {
                 if (mSingleton == null) {
                     mSingleton = new Contractor(context).build();
                 }
@@ -58,8 +58,8 @@ public class PugNotification {
             this.mContext = context.getApplicationContext();
         }
 
-        public PugNotification build() {
-            return new PugNotification(mContext);
+        public ZadakNotification build() {
+            return new ZadakNotification(mContext);
         }
     }
 }

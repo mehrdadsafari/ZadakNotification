@@ -4,7 +4,6 @@ import android.app.PendingIntent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 
-
 public class NotificationBean {
     private int identifier;
     private String title;

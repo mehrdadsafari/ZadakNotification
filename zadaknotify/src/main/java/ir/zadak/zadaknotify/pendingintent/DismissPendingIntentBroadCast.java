@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import ir.zadak.zadaknotify.constants.BroadcastActions;
 import ir.zadak.zadaknotify.interfaces.PendingIntentNotification;
-import ir.zadak.zadaknotify.notification.PugNotification;
+import ir.zadak.zadaknotify.notification.ZadakNotification;
 
 
 public class DismissPendingIntentBroadCast implements PendingIntentNotification {
@@ -20,14 +20,14 @@ public class DismissPendingIntentBroadCast implements PendingIntentNotification 
 
     @Override
     public PendingIntent onSettingPendingIntent() {
-        Intent clickIntentBroadcast = new Intent(BroadcastActions.ACTION_PUGNOTIFICATION_DIMISS_INTENT);
+        Intent clickIntentBroadcast = new Intent(BroadcastActions.ACTION_DISMISS_INTENT);
         clickIntentBroadcast.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        clickIntentBroadcast.setPackage(PugNotification.mSingleton.mContext.getPackageName());
+        clickIntentBroadcast.setPackage(ZadakNotification.mSingleton.mContext.getPackageName());
         if (mBundle != null) {
             clickIntentBroadcast.putExtras(mBundle);
         }
 
-        return PendingIntent.getBroadcast(PugNotification.mSingleton.mContext, mIdentifier, clickIntentBroadcast,
+        return PendingIntent.getBroadcast(ZadakNotification.mSingleton.mContext, mIdentifier, clickIntentBroadcast,
                 PendingIntent.FLAG_UPDATE_CURRENT);
     }
 

@@ -24,7 +24,7 @@ import ir.zadak.zadaknotify.pendingintent.DismissPendingIntentBroadCast;
 
 
 public class Load {
-    private static final String TAG = "Pugnotification.Load";
+
     private NotificationCompat.Builder builder;
 
     private String message;
@@ -36,8 +36,8 @@ public class Load {
     private String title;
 
     public Load() {
-        builder = new NotificationCompat.Builder(PugNotification.mSingleton.mContext);
-        builder.setContentIntent(PendingIntent.getBroadcast(PugNotification.mSingleton.mContext, 0, new Intent(),
+        builder = new NotificationCompat.Builder(ZadakNotification.mSingleton.mContext);
+        builder.setContentIntent(PendingIntent.getBroadcast(ZadakNotification.mSingleton.mContext, 0, new Intent(),
                 PendingIntent.FLAG_UPDATE_CURRENT));
     }
 
@@ -61,7 +61,7 @@ public class Load {
             throw new IllegalArgumentException("Resource ID Should Not Be Less Than Or Equal To Zero!");
         }
 
-        return bigTextStyle(PugNotification.mSingleton.mContext.getResources().getString(
+        return bigTextStyle(ZadakNotification.mSingleton.mContext.getResources().getString(
 
                 bigTextStyle), null);
     }
@@ -72,8 +72,8 @@ public class Load {
             throw new IllegalArgumentException("Resource ID Should Not Be Less Than Or Equal To Zero!");
         }
 
-        return bigTextStyle(PugNotification.mSingleton.mContext.getResources().getString(
-                bigTextStyle), PugNotification.mSingleton.mContext.getResources().getString(
+        return bigTextStyle(ZadakNotification.mSingleton.mContext.getResources().getString(
+                bigTextStyle), ZadakNotification.mSingleton.mContext.getResources().getString(
                 summaryText));
     }
 
@@ -166,7 +166,7 @@ public class Load {
             throw new IllegalArgumentException("Resource ID Should Not Be Less Than Or Equal To Zero!");
         }
 
-        Context context = PugNotification.mSingleton.mContext;
+        Context context = ZadakNotification.mSingleton.mContext;
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             this.builder.setColor(context.getColor(color));
         } else {
@@ -270,7 +270,7 @@ public class Load {
             throw new IllegalArgumentException("Resource ID Should Not Be Less Than Or Equal To Zero!");
         }
 
-        Bitmap bitmap = BitmapFactory.decodeResource(PugNotification.mSingleton.mContext.getResources(), largeIcon);
+        Bitmap bitmap = BitmapFactory.decodeResource(ZadakNotification.mSingleton.mContext.getResources(), largeIcon);
         this.builder.setLargeIcon(bitmap);
         return this;
     }
@@ -295,7 +295,7 @@ public class Load {
             throw new IllegalArgumentException("Resource ID Should Not Be Less Than Or Equal To Zero!");
         }
 
-        this.message = PugNotification.mSingleton.mContext.getResources().getString(message);
+        this.message = ZadakNotification.mSingleton.mContext.getResources().getString(message);
         this.builder.setContentText(this.message);
         return this;
     }
@@ -383,7 +383,7 @@ public class Load {
             throw new IllegalArgumentException("Resource ID Should Not Be Less Than Or Equal To Zero!");
         }
 
-        this.builder.setTicker(PugNotification.mSingleton.mContext.getResources().getString(ticker));
+        this.builder.setTicker(ZadakNotification.mSingleton.mContext.getResources().getString(ticker));
 
         return this;
     }
@@ -412,7 +412,7 @@ public class Load {
             throw new IllegalArgumentException("Resource ID Should Not Be Less Than Or Equal To Zero!");
         }
 
-        this.title = PugNotification.mSingleton.mContext.getResources().getString(title);
+        this.title = ZadakNotification.mSingleton.mContext.getResources().getString(title);
         this.builder.setContentTitle(this.title);
         return this;
     }

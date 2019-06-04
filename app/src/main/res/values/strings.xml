@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">ZadakNotification</string>
+
+    <string name="text_type">Type</string>
+    <string name="text_empty_fields">The fields can\'t be empty!</string>
+
+    
+    <string name="text_title">Title</string>
+    <string name="text_hint_title">Insert Title</string>
+    <string name="text_message">Message</string>
+    <string name="text_bigtext">Big Text</string>
+    <string name="text_url">Url Image</string>
+    <string name="text_hint_url">Url</string>
+    <string name="text_hint_bigtext">Big Text</string>
+    <string name="text_hint_message">Insert Message</string>
+    <string name="button_notify_simple">Notify Simple</string>
+    <string name="button_notify_custom">Notify Custom</string>
+    <string name="text_summary">5 new messages</string>
+
+    <array name="notification_types">
+        <item>Simple</item>
+        <item>Big Text</item>
+        <item>Inbox Style</item>
+    </array>
+
+    <array name="notification_inbox_lines">
+        <item>Message 1</item>
+        <item>Message 2</item>
+        <item>Message 3</item>
+        <item>Message 4</item>
+        <item>Message 5</item>
+    </array>
 </resources>

@@ -2,9 +2,6 @@ package ir.zadak.zadaknotify.notification;
 
 import android.support.v4.app.NotificationCompat;
 
-/**
- * Created by HalysonLima on 07/09/15.
- */
 public class Progress extends Builder {
     public Progress(NotificationCompat.Builder builder, int identifier, String tag) {
         super(builder, identifier, tag);
@@ -17,7 +14,7 @@ public class Progress extends Builder {
     }
 
     public Progress update(int identifier, int progress, int max, boolean indeterminate) {
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(PugNotification.mSingleton.mContext);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(ZadakNotification.mSingleton.mContext);
         builder.setProgress(max, progress, indeterminate);
 
         notification = builder.build();

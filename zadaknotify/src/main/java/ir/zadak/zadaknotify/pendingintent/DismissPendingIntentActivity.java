@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import ir.zadak.zadaknotify.constants.BroadcastActions;
 import ir.zadak.zadaknotify.interfaces.PendingIntentNotification;
-import ir.zadak.zadaknotify.notification.PugNotification;
+import ir.zadak.zadaknotify.notification.ZadakNotification;
 
 
 public class DismissPendingIntentActivity implements PendingIntentNotification {
@@ -22,15 +22,15 @@ public class DismissPendingIntentActivity implements PendingIntentNotification {
 
     @Override
     public PendingIntent onSettingPendingIntent() {
-        Intent dismissIntentActivity = new Intent(PugNotification.mSingleton.mContext, mActivity);
-        dismissIntentActivity.setAction(BroadcastActions.ACTION_PUGNOTIFICATION_DIMISS_INTENT);
+        Intent dismissIntentActivity = new Intent(ZadakNotification.mSingleton.mContext, mActivity);
+        dismissIntentActivity.setAction(BroadcastActions.ACTION_DISMISS_INTENT);
         dismissIntentActivity.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        dismissIntentActivity.setPackage(PugNotification.mSingleton.mContext.getPackageName());
+        dismissIntentActivity.setPackage(ZadakNotification.mSingleton.mContext.getPackageName());
         if (mBundle != null) {
             dismissIntentActivity.putExtras(mBundle);
         }
 
-        return PendingIntent.getActivity(PugNotification.mSingleton.mContext, mIdentifier, dismissIntentActivity,
+        return PendingIntent.getActivity(ZadakNotification.mSingleton.mContext, mIdentifier, dismissIntentActivity,
                 PendingIntent.FLAG_UPDATE_CURRENT);
     }
 

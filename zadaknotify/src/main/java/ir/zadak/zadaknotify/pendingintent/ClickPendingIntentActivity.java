@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import ir.zadak.zadaknotify.constants.BroadcastActions;
 import ir.zadak.zadaknotify.interfaces.PendingIntentNotification;
-import ir.zadak.zadaknotify.notification.PugNotification;
+import ir.zadak.zadaknotify.notification.ZadakNotification;
 
 
 public class ClickPendingIntentActivity implements PendingIntentNotification {
@@ -22,15 +22,15 @@ public class ClickPendingIntentActivity implements PendingIntentNotification {
 
     @Override
     public PendingIntent onSettingPendingIntent() {
-        Intent clickIntentActivity = new Intent(PugNotification.mSingleton.mContext, mActivity);
-        clickIntentActivity.setAction(BroadcastActions.ACTION_PUGNOTIFICATION_CLICK_INTENT);
+        Intent clickIntentActivity = new Intent(ZadakNotification.mSingleton.mContext, mActivity);
+        clickIntentActivity.setAction(BroadcastActions.ACTION_CLICK_INTENT);
         clickIntentActivity.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        clickIntentActivity.setPackage(PugNotification.mSingleton.mContext.getPackageName());
+        clickIntentActivity.setPackage(ZadakNotification.mSingleton.mContext.getPackageName());
 
         if (mBundle != null) {
             clickIntentActivity.putExtras(mBundle);
         }
-        return PendingIntent.getActivity(PugNotification.mSingleton.mContext, mIdentifier, clickIntentActivity,
+        return PendingIntent.getActivity(ZadakNotification.mSingleton.mContext, mIdentifier, clickIntentActivity,
                 PendingIntent.FLAG_UPDATE_CURRENT);
     }
 }

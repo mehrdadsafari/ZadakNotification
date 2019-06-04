@@ -15,9 +15,6 @@ import java.util.List;
 import ir.zadak.zadaknotify.R;
 import ir.zadak.zadaknotify.interfaces.PendingIntentNotification;
 
-/**
- * Created by Halyson on 04/05/15.
- */
 public class Wear extends Builder {
     private NotificationCompat.WearableExtender wearableExtender;
     private RemoteInput remoteInput;
@@ -74,7 +71,7 @@ public class Wear extends Builder {
 
 
     public Wear remoteInput(@DrawableRes int icon, @StringRes int title, PendingIntentNotification pendingIntentNotification, RemoteInput remoteInput) {
-        remoteInput(icon, PugNotification.mSingleton.mContext.getString(title), pendingIntentNotification.onSettingPendingIntent(), remoteInput);
+        remoteInput(icon, ZadakNotification.mSingleton.mContext.getString(title), pendingIntentNotification.onSettingPendingIntent(), remoteInput);
         return this;
     }
 
@@ -84,10 +81,11 @@ public class Wear extends Builder {
     }
 
     public Wear remoteInput(@DrawableRes int icon, @StringRes int title, PendingIntent pendingIntent, RemoteInput remoteInput) {
-        remoteInput(icon, PugNotification.mSingleton.mContext.getString(title), pendingIntent, remoteInput);
+        remoteInput(icon, ZadakNotification.mSingleton.mContext.getString(title), pendingIntent, remoteInput);
         return this;
     }
 
+    @SuppressLint("ResourceType")
     public Wear remoteInput(@DrawableRes int icon, String title, PendingIntent pendingIntent, RemoteInput remoteInput) {
         if (icon <= 0) {
             throw new IllegalArgumentException("Resource ID Icon Should Not Be Less Than Or Equal To Zero!");
@@ -127,9 +125,9 @@ public class Wear extends Builder {
             throw new IllegalArgumentException("PendingIntent Must Not Be Null!");
         }
 
-        this.remoteInput = new RemoteInput.Builder(PugNotification.mSingleton.mContext.getString(R.string.key_voice_reply))
-                .setLabel(PugNotification.mSingleton.mContext.getString(R.string.label_voice_reply))
-                .setChoices(PugNotification.mSingleton.mContext.getResources().getStringArray(R.array.reply_choices))
+        this.remoteInput = new RemoteInput.Builder(ZadakNotification.mSingleton.mContext.getString(R.string.key_voice_reply))
+                .setLabel(ZadakNotification.mSingleton.mContext.getString(R.string.label_voice_reply))
+                .setChoices(ZadakNotification.mSingleton.mContext.getResources().getStringArray(R.array.reply_choices))
                 .build();
         wearableExtender.addAction(new NotificationCompat.Action.Builder(icon,
                 title, pendingIntent)
@@ -139,7 +137,7 @@ public class Wear extends Builder {
     }
 
     public Wear remoteInput(@DrawableRes int icon, @StringRes int title, PendingIntent pendingIntent, String replyLabel, String[] replyChoices) {
-        return remoteInput(icon, PugNotification.mSingleton.mContext.getString(title), pendingIntent, replyLabel, replyChoices);
+        return remoteInput(icon, ZadakNotification.mSingleton.mContext.getString(title), pendingIntent, replyLabel, replyChoices);
     }
 
     @SuppressLint("ResourceType")
@@ -163,7 +161,7 @@ public class Wear extends Builder {
             throw new IllegalArgumentException("Reply Label Must Not Be Null!");
         }
 
-        this.remoteInput = new RemoteInput.Builder(PugNotification.mSingleton.mContext.getString(R.string.key_voice_reply))
+        this.remoteInput = new RemoteInput.Builder(ZadakNotification.mSingleton.mContext.getString(R.string.key_voice_reply))
                 .setLabel(replyLabel)
                 .setChoices(replyChoices)
                 .build();
@@ -189,7 +187,7 @@ public class Wear extends Builder {
             throw new IllegalArgumentException("Resource ID Background Should Not Be Less Than Or Equal To Zero!");
         }
 
-        Bitmap bitmap = BitmapFactory.decodeResource(PugNotification.mSingleton.mContext.getResources(), background);
+        Bitmap bitmap = BitmapFactory.decodeResource(ZadakNotification.mSingleton.mContext.getResources(), background);
         this.wearableExtender.setBackground(bitmap);
         return this;
     }
