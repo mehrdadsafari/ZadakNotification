@@ -24,7 +24,7 @@ Add the dependency:
 You're probably tired of writing code to display notifications in your applications, the library abstracts all the notifications construction process for you in a single line of code. this library support Android Wear.
 
 ```java
-PugNotification.with(context)
+ZadakNotification.with(context)
     .load()
     .notificationChannelId(CHANNEL_ID)
     .identifier(identifier)
@@ -52,7 +52,7 @@ PugNotification.with(context)
 Simple notification with just text and message.
 
 ```java
-PugNotification.with(context)
+ZadakNotification.with(context)
     .load()
     .notificationChannelId(CHANNEL_ID)
     .title(title)
@@ -70,7 +70,7 @@ PugNotification.with(context)
 Simple notification with progress.
 
 ```java
-PugNotification.with(context)
+ZadakNotification.with(context)
     load()
     .notificationChannelId(CHANNEL_ID)
     .identifier(identifier)
@@ -81,7 +81,7 @@ PugNotification.with(context)
 ```
 
 ```java
-PugNotification.with(context)
+ZadakNotification.with(context)
     .load()
     .notificationChannelId(CHANNEL_ID)
     .identifier(identifier)
@@ -97,7 +97,7 @@ We have changed the way the library handles the download images for custom notif
 So we serve the requests and modify the library to allow the download of image management as an example:
 
 ```java
-PugNotification.with(context)
+ZadakNotification.with(context)
     .load()
     .notificationChannelId(CHANNEL_ID)
     .title(title)
@@ -118,7 +118,7 @@ PugNotification.with(context)
 # Wear Notification
 
 ```java
-PugNotification.with(mContext).load()
+ZadakNotification.with(mContext).load()
     .notificationChannelId(CHANNEL_ID)
     .smallIcon(R.drawable.ic_launcher)
     .autoCancel(true)
