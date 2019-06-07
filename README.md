@@ -172,8 +172,6 @@ Cancel Notification
 ```
 ZadakNotification.with(mContext).cancel(identifier);
 ```
-# Download Demo
-
 # ProGuard
 
 If you use the Picasso to manage the download of the image, add the line below to your proguard file:
