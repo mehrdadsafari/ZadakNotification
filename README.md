@@ -163,8 +163,16 @@ Now just the client implement the ImageLoader interface and implement a way to m
 ```
 ZadakNotification supports placeholders if download the image in the background is not successful. The library already have a default placeholder size 622x384.
 
-# More Information
-Sample App
+# Important note
+For disable the swipe delete notification use 
+```
+.setOngoing(true)
+```
+Cancel Notification
+```
+ZadakNotification.with(mContext).cancel(identifier);
+```
+# Download Demo
 
 # ProGuard
 
