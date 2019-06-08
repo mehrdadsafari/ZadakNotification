@@ -71,7 +71,7 @@ Simple notification with progress.
 
 ```java
 ZadakNotification.with(context)
-    load()
+    .load()
     .notificationChannelId(CHANNEL_ID)
     .identifier(identifier)
     .smallIcon(R.drawable.ic_launcher)
