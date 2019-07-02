@@ -1,3 +1,4 @@
+https://img.shields.io/badge/Android%20Arsenal-ZadakNotification-green.svg?style=flat
 # ZadakNotification
 ![soon](https://zadak.ir/logo.png)
 
