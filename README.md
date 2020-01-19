@@ -1,8 +1,6 @@
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ZadakNotification-green.svg?style=flat)](https://android-arsenal.com/details/1/7749)
 # ZadakNotification
-![soon](https://zadak.ir/logo.png)
-
 # Download
 #Step 1:
 Add it in your root build.gradle at the end of repositories:
