@@ -2,7 +2,7 @@
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ZadakNotification-green.svg?style=flat)](https://android-arsenal.com/details/1/7749)
 # ZadakNotification
 # Download
-#Step 1:
+# Step 1:
 Add it in your root build.gradle at the end of repositories:
 ``` groovy
 allprojects {
@@ -11,7 +11,7 @@ allprojects {
 		}
 	}
 ```
-#Step 2:
+# Step 2:
 Add the dependency:
 ```groovy
  implementation 'com.github.mehrdadsafari:ZadakNotification:0.0.2'
